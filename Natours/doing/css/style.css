@@ -54,6 +54,7 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden; /* prevents the animation of heading main and sub from jumping at the end */
 }
 
 .heading-primary-main {
@@ -61,6 +62,7 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  animation: LeftToRight 1s ease-out;
 }
 
 .heading-primary-sub {
@@ -68,4 +70,32 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  animation: RightToLeft 1s ease-out;
+}
+
+@keyframes LeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes RightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
