@@ -13,7 +13,15 @@
   transform: translate(-50%, -50%);
 }
 
-// MEIDA QUEEY MANAGER
+// MEIDA QUERY MANAGER
+/*
+0 - 600px :     Phone
+600 - 900px:    Tablet portrait
+900px - 1200px: Tablet landscape
+1200 - 1800     Normal styles apply
+1800 +          Big desktop
+
+*/
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
     @media (max-width: 37.5em) {
